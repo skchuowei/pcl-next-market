@@ -1,0 +1,45 @@
+name: build-index
+
+on:
+  schedule:
+    # 每小时第 17 分（避开整点高峰）
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: build-index
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 检出
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 生成索引
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_index.py
+
+      - name: 提交变更
+        run: |
+          set -e
+          if git diff --quiet -- market/index.json; then
+            echo "索引无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market/index.json
+          git commit -m "chore(index): 更新扩展索引"
+          git push
