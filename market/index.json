@@ -2,7 +2,27 @@
   "version": 1,
   "name": "pcl-next 官方扩展索引",
   "group": "官方",
-  "generatedAt": "2026-11-15T11:45:57Z",
+  "generatedAt": "2026-11-15T12:03:01Z",
   "tags": [],
-  "plugins": []
+  "plugins": [
+    {
+      "id": "pclnext.demo.tool",
+      "name": "示例扩展（外部工具）",
+      "description": "扩展市场自检用的最小示例：只在「扩展提供的工具」里加一个按钮，不改变下载镜像与启动参数。",
+      "author": {
+        "displayName": "skchuowei",
+        "githubLogin": "skchuowei"
+      },
+      "repository": "https://github.com/skchuowei/pclnext-ext-demo",
+      "manifestUrl": "https://raw.githubusercontent.com/skchuowei/pclnext-ext-demo/refs/heads/main/plugin.json",
+      "level": "L0",
+      "version": "0.1.0",
+      "packageUrl": "https://github.com/skchuowei/pclnext-ext-demo/releases/download/v0.1.0/pclnext-ext-demo-0.1.0.pclnx",
+      "sha256": "218d24cc92643a34a19f1d5c7fcfa26ca64b317ba69d127d434be654d3cf550a",
+      "updatedAt": "2026-11-15T12:02:22Z",
+      "downloads": 0,
+      "tags": [],
+      "group": "社区"
+    }
+  ]
 }
