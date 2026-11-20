@@ -2,7 +2,7 @@
   "version": 1,
   "name": "pcl-next 官方扩展索引",
   "group": "官方",
-  "generatedAt": "2026-11-15T18:54:51Z",
+  "generatedAt": "2026-11-20T18:37:56Z",
   "tags": [],
   "plugins": [
     {
@@ -20,7 +20,7 @@
       "packageUrl": "https://github.com/skchuowei/pclnext-ext-demo/releases/download/v0.1.0/pclnext-ext-demo-0.1.0.pclnx",
       "sha256": "218d24cc92643a34a19f1d5c7fcfa26ca64b317ba69d127d434be654d3cf550a",
       "updatedAt": "2026-11-15T12:02:22Z",
-      "downloads": 3,
+      "downloads": 5,
       "tags": [],
       "group": "社区"
     }
